@@ -46,7 +46,7 @@ export default function Home() {
       </main>
 
       <footer>
-        <a href="/login">Log In</a>
+        <a href="/admin">Log In</a>
       </footer>
     </>
   );
