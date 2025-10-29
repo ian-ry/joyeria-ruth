@@ -74,7 +74,7 @@ export async function obtenerProductosPorCategoria(categoria: string): Promise<P
 
 // Utilidades para Pedidos
 export async function crearPedido(pedido: NuevoPedido): Promise<Pedido> {
-  const fechaEntregaIso = pedido.fecha_entrega
+  const fechaEntregaIso: string | null = pedido.fecha_entrega
     ? new Date(pedido.fecha_entrega).toISOString()
     : null;
   const { rows } = await sql`
