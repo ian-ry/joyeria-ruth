@@ -74,9 +74,12 @@ export async function obtenerProductosPorCategoria(categoria: string): Promise<P
 
 // Utilidades para Pedidos
 export async function crearPedido(pedido: NuevoPedido): Promise<Pedido> {
+  const fechaEntregaIso = pedido.fecha_entrega
+    ? new Date(pedido.fecha_entrega).toISOString()
+    : null;
   const { rows } = await sql`
     INSERT INTO pedidos (cliente_id, numero_contacto, descripcion, estado, fecha_entrega, notas)
-    VALUES (${pedido.cliente_id || null}, ${pedido.numero_contacto}, ${pedido.descripcion}, ${pedido.estado || 'pendiente'}, ${pedido.fecha_entrega || null}, ${pedido.notas || null})
+    VALUES (${pedido.cliente_id || null}, ${pedido.numero_contacto}, ${pedido.descripcion}, ${pedido.estado || 'pendiente'}, ${fechaEntregaIso}, ${pedido.notas || null})
     RETURNING *
   `;
   return rows[0] as Pedido;
