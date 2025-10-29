@@ -1,8 +1,11 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Inter:wght@300;400;500;600&display=swap');
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #000000;
+  --foreground: #ffffff;
+  --accent: #ffffff;
+  --border: #333333;
 }
 
 @theme inline {
@@ -12,15 +15,1072 @@
   --font-mono: var(--font-geist-mono);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-weight: 300;
+  letter-spacing: 0.5px;
+  line-height: 1.6;
+}
+
+/* Estilos elegantes para Joyería Ruth - Inspirado en diseño de alta joyería */
+header {
+  border-bottom: 1px solid var(--border);
+  background: var(--background);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.header-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 24px 32px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.header-container h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.8rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--foreground);
+}
+
+.header-logo {
+  text-decoration: none;
+  color: inherit;
+  transition: opacity 0.3s ease;
+}
+
+.header-logo:hover {
+  opacity: 0.8;
+}
+
+.header-logo h1 {
+  margin: 0;
+}
+
+.header-links {
+  display: flex;
+  gap: 32px;
+  font-weight: 400;
+  font-size: 0.9rem;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.header-links a {
+  color: var(--foreground);
+  text-decoration: none;
+  transition: opacity 0.3s ease;
+  position: relative;
+}
+
+.header-links a:hover {
+  opacity: 0.7;
+}
+
+.header-links a::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background: var(--foreground);
+  transition: width 0.3s ease;
+}
+
+.header-links a:hover::after {
+  width: 100%;
+}
+
+.contenedor {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 80px 32px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: center;
+  min-height: 70vh;
+}
+
+.cajaizq {
+  position: relative;
+  overflow: hidden;
+}
+
+.cajaizq img {
+  width: 100%;
+  height: 500px;
+  object-fit: cover;
+  filter: grayscale(100%) contrast(1.2);
+  transition: transform 0.6s ease, filter 0.6s ease;
+}
+
+.cajaizq:hover img {
+  transform: scale(1.05);
+  filter: grayscale(80%) contrast(1.1);
+}
+
+.cajader {
+  display: flex;
+  align-items: center;
+  padding: 40px 0;
+}
+
+.cajader-content {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.cajader-content h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 3.5rem;
+  font-weight: 900;
+  line-height: 1.1;
+  letter-spacing: 1px;
+  color: var(--foreground);
+  margin: 0;
+}
+
+.cajader-content h3 {
+  font-size: 1.1rem;
+  font-weight: 300;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--foreground);
+  opacity: 0.8;
+  margin: 0;
+}
+
+.cajader-content h4 {
+  font-size: 1rem;
+  font-weight: 300;
+  line-height: 1.8;
+  color: var(--foreground);
+  opacity: 0.9;
+  margin: 0;
+  max-width: 500px;
+}
+
+.cajader-content nav {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+  margin-top: 16px;
+}
+
+.cajader-content nav a {
+  padding: 12px 24px;
+  border: 1px solid var(--foreground);
+  background: transparent;
+  color: var(--foreground);
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 400;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.cajader-content nav a::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: var(--foreground);
+  transition: left 0.3s ease;
+  z-index: -1;
+}
+
+.cajader-content nav a:hover {
+  color: var(--background);
+}
+
+.cajader-content nav a:hover::before {
+  left: 0;
+}
+
+footer {
+  border-top: 1px solid var(--border);
+  padding: 32px;
+  text-align: center;
+  background: var(--background);
+}
+
+footer a {
+  color: var(--foreground);
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 400;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  transition: opacity 0.3s ease;
+}
+
+footer a:hover {
+  opacity: 0.7;
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+  .contenedor {
+    gap: 60px;
+    padding: 60px 24px;
+  }
+  
+  .cajader-content h2 {
+    font-size: 3rem;
+  }
+}
+
+@media (max-width: 900px) {
+  .contenedor {
+    grid-template-columns: 1fr;
+    gap: 40px;
+    padding: 40px 20px;
+  }
+  
+  .header-container {
+    padding: 20px;
+    flex-direction: column;
+    gap: 20px;
+  }
+  
+  .header-links {
+    gap: 20px;
+  }
+  
+  .cajader-content h2 {
+    font-size: 2.5rem;
+  }
+  
+  .cajader-content nav {
+    justify-content: center;
+  }
+}
+
+/* Estilos mejorados para página de contacto */
+.contacto-hero {
+  background: linear-gradient(135deg, rgba(0,0,0,0.8), rgba(0,0,0,0.6));
+  padding: 120px 32px 80px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.contacto-hero::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="25" cy="25" r="1" fill="white" opacity="0.1"/><circle cx="75" cy="75" r="1" fill="white" opacity="0.1"/><circle cx="50" cy="10" r="0.5" fill="white" opacity="0.1"/><circle cx="10" cy="60" r="0.5" fill="white" opacity="0.1"/><circle cx="90" cy="40" r="0.5" fill="white" opacity="0.1"/></pattern></defs><rect width="100" height="100" fill="url(%23grain)"/></svg>');
+  opacity: 0.3;
+}
+
+.contacto-hero-content {
+  position: relative;
+  z-index: 1;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.contacto-hero h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: 4.5rem;
+  font-weight: 900;
+  line-height: 1.1;
+  letter-spacing: 2px;
+  color: var(--foreground);
+  margin: 0 0 24px 0;
+}
+
+.contacto-hero p {
+  font-size: 1.2rem;
+  font-weight: 300;
+  line-height: 1.6;
+  color: var(--foreground);
+  opacity: 0.9;
+  margin: 0;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.contacto-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 80px 32px;
+}
+
+.contacto-info {
+  text-align: center;
+}
+
+.contacto-info h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 2.5rem;
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: 1px;
+  color: var(--foreground);
+  margin: 0 0 60px 0;
+}
+
+.contacto-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 30px;
+  padding: 32px 0;
+  border-bottom: 1px solid var(--border);
+  transition: all 0.3s ease;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.contacto-item:hover {
+  padding-left: 8px;
+}
+
+.contacto-item:last-child {
+  border-bottom: none;
+}
+
+.contacto-icon {
+  font-size: 2.5rem;
+  width: 80px;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.contacto-details {
+  text-align: left;
+  flex: 1;
+}
+
+.contacto-details h3 {
+  font-size: 1.4rem;
+  font-weight: 600;
+  letter-spacing: 1px;
+  color: var(--foreground);
+  margin: 0 0 8px 0;
+}
+
+.contacto-details p {
+  font-size: 1.1rem;
+  font-weight: 300;
+  color: var(--foreground);
+  opacity: 0.8;
+  margin: 0 0 16px 0;
+}
+
+.contacto-link {
+  color: var(--foreground);
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 400;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  padding: 10px 20px;
+  border: 1px solid var(--foreground);
+  background: transparent;
+  transition: all 0.3s ease;
+  display: inline-block;
+  position: relative;
+  overflow: hidden;
+}
+
+.contacto-link::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: var(--foreground);
+  transition: left 0.3s ease;
+  z-index: -1;
+}
+
+.contacto-link:hover {
+  color: var(--background);
+}
+
+.contacto-link:hover::before {
+  left: 0;
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+  .contacto-hero h1 {
+    font-size: 4rem;
+  }
+}
+
+@media (max-width: 900px) {
+  .contacto-hero {
+    padding: 100px 20px 60px;
+  }
+  
+  .contacto-container {
+    padding: 60px 20px;
+  }
+  
+  .contacto-hero h1 {
+    font-size: 3.5rem;
+  }
+  
+  .contacto-info h2 {
+    font-size: 2rem;
+  }
+  
+  .contacto-item {
+    flex-direction: column;
+    text-align: center;
+    gap: 20px;
+    padding: 24px 0;
+  }
+  
+  .contacto-icon {
+    align-self: center;
+  }
+  
+  .contacto-details {
+    text-align: center;
+  }
+}
+
+@media (max-width: 600px) {
+  .contacto-hero h1 {
+    font-size: 2.8rem;
+  }
+  
+  .contacto-hero p {
+    font-size: 1rem;
+  }
+  
+  .contacto-info h2 {
+    font-size: 1.8rem;
+  }
+  
+  .contacto-item {
+    padding: 20px 0;
+    gap: 16px;
+  }
+  
+  .contacto-icon {
+    width: 60px;
+    height: 60px;
+    font-size: 2rem;
+  }
+  
+  .contacto-details h3 {
+    font-size: 1.2rem;
+  }
+  
+  .contacto-details p {
+    font-size: 1rem;
+  }
+}
+
+/* Estilos para página de catálogo */
+.catalogo-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 24px;
+  padding: 20px 0;
+}
+
+.producto {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 20px;
+  border: 1px solid var(--border);
+  background: rgba(255, 255, 255, 0.02);
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.producto::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.05);
+  transition: left 0.3s ease;
+  z-index: -1;
+}
+
+.producto:hover {
+  transform: translateY(-4px);
+  border-color: var(--foreground);
+}
+
+.producto:hover::before {
+  left: 0;
+}
+
+.producto img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  filter: grayscale(100%) contrast(1.1);
+  transition: filter 0.3s ease;
+  margin-bottom: 16px;
+}
+
+.producto:hover img {
+  filter: grayscale(80%) contrast(1.2);
+}
+
+.producto h4 {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.1rem;
+  font-weight: 600;
+  letter-spacing: 1px;
+  color: var(--foreground);
+  margin: 0;
+  text-transform: uppercase;
+}
+
+.cajader nav h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: 2.5rem;
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: 2px;
+  color: var(--foreground);
+  margin: 0;
+  text-align: center;
+}
+
+.cajader nav h1 a {
+  color: var(--foreground);
+  text-decoration: none;
+  transition: opacity 0.3s ease;
+  position: relative;
+  display: inline-block;
+}
+
+.cajader nav h1 a::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: var(--foreground);
+  transition: width 0.3s ease;
+}
+
+.cajader nav h1 a:hover {
+  opacity: 0.8;
+}
+
+.cajader nav h1 a:hover::after {
+  width: 100%;
+}
+
+/* Responsive Design para catálogo */
+@media (max-width: 1200px) {
+  .catalogo-grid {
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 20px;
+  }
+}
+
+@media (max-width: 900px) {
+  .contenedor {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+  
+  .catalogo-grid {
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    gap: 16px;
+    padding: 16px 0;
+  }
+  
+  .producto {
+    padding: 16px;
+  }
+  
+  .producto img {
+    height: 160px;
+  }
+  
+  .cajader nav h1 {
+    font-size: 2rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .catalogo-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+  }
+  
+  .producto {
+    padding: 12px;
+  }
+  
+  .producto img {
+    height: 140px;
+  }
+  
+  .producto h4 {
+    font-size: 0.9rem;
+  }
+  
+  .cajader nav h1 {
+    font-size: 1.8rem;
+  }
+}
+
+/* Estilos para página de pedidos */
+.pedido {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  padding: 20px 0;
+}
+
+.pedido-fieldset {
+  border: 2px solid var(--foreground);
+  border-radius: 8px;
+  padding: 32px;
+  background: rgba(255, 255, 255, 0.02);
+  position: relative;
+}
+
+.pedido-fieldset legend {
+  padding: 0 16px;
+  background: var(--background);
+}
+
+.pedido-fieldset legend h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 2rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  color: var(--foreground);
+  margin: 0;
+  text-transform: uppercase;
+}
+
+.pedido .form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 24px;
+}
+
+.pedido .form-group h4 {
+  font-size: 1.1rem;
+  font-weight: 500;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: var(--foreground);
+  margin: 0;
+  opacity: 0.9;
+}
+
+.pedido .form-group input,
+.pedido .form-group textarea {
+  padding: 16px 20px;
+  border: 1px solid var(--border);
+  background: transparent;
+  color: var(--foreground);
+  font-size: 1rem;
+  font-weight: 300;
+  letter-spacing: 0.5px;
+  transition: all 0.3s ease;
+  border-radius: 4px;
+  font-family: inherit;
+}
+
+.pedido .form-group input:focus,
+.pedido .form-group textarea:focus {
+  outline: none;
+  border-color: var(--foreground);
+  background: rgba(255, 255, 255, 0.02);
+  box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.1);
+}
+
+.pedido .form-group input:disabled,
+.pedido .form-group textarea:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  background: rgba(255, 255, 255, 0.01);
+}
+
+.pedido .form-group input::placeholder,
+.pedido .form-group textarea::placeholder {
+  color: var(--foreground);
+  opacity: 0.5;
+}
+
+.pedido .form-group textarea {
+  resize: vertical;
+  min-height: 120px;
+}
+
+.pedido-submit {
+  padding: 16px 32px;
+  border: 2px solid var(--foreground);
+  background: transparent;
+  color: var(--foreground);
+  font-size: 1rem;
+  font-weight: 500;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  border-radius: 4px;
+  width: 100%;
+}
+
+.pedido-submit::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: var(--foreground);
+  transition: left 0.3s ease;
+  z-index: -1;
+}
+
+.pedido-submit:hover {
+  color: var(--background);
+}
+
+.pedido-submit:hover::before {
+  left: 0;
+}
+
+.pedido-submit:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.pedido-submit:disabled:hover {
+  color: var(--foreground);
+}
+
+.pedido-submit:disabled:hover::before {
+  left: -100%;
+}
+
+.pedido-form {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.success-message {
+  background: rgba(0, 255, 0, 0.1);
+  border: 1px solid rgba(0, 255, 0, 0.3);
+  border-radius: 8px;
+  padding: 20px;
+  margin-bottom: 24px;
+  text-align: center;
+}
+
+.success-message h3 {
+  color: #00ff00;
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin: 0 0 8px 0;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.success-message p {
+  color: var(--foreground);
+  opacity: 0.9;
+  margin: 0;
+  font-size: 1rem;
+}
+
+.error-message {
+  background: rgba(255, 0, 0, 0.1);
+  border: 1px solid rgba(255, 0, 0, 0.3);
+  border-radius: 8px;
+  padding: 20px;
+  margin-bottom: 24px;
+  text-align: center;
+}
+
+.error-message h3 {
+  color: #ff0000;
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin: 0 0 8px 0;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.error-message p {
+  color: var(--foreground);
+  opacity: 0.9;
+  margin: 0;
+  font-size: 1rem;
+}
+
+.regresar-btn {
+  padding: 12px 24px;
+  border: 1px solid var(--border);
+  background: transparent;
+  color: var(--foreground);
+  font-size: 0.9rem;
+  font-weight: 400;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border-radius: 4px;
+  align-self: flex-start;
+}
+
+.regresar-btn:hover {
+  border-color: var(--foreground);
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.regresar-btn a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.cajader img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 8px;
+  filter: grayscale(100%) contrast(1.2);
+  transition: filter 0.6s ease;
+}
+
+.cajader:hover img {
+  filter: grayscale(80%) contrast(1.1);
+}
+
+/* Responsive Design para pedidos */
+@media (max-width: 900px) {
+  .contenedor {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+  
+  .pedido-fieldset {
+    padding: 24px;
+  }
+  
+  .pedido-fieldset legend h2 {
+    font-size: 1.8rem;
+  }
+  
+  .pedido .form-group {
+    margin-bottom: 20px;
+  }
+  
+  .pedido .form-group h4 {
+    font-size: 1rem;
+  }
+  
+  .pedido .form-group input,
+  .pedido .form-group textarea {
+    padding: 14px 16px;
+  }
+  
+  .pedido-submit {
+    padding: 14px 24px;
+  }
+  
+  .regresar-btn {
+    align-self: center;
+  }
+}
+
+@media (max-width: 600px) {
+  .pedido-fieldset {
+    padding: 20px;
+  }
+  
+  .pedido-fieldset legend h2 {
+    font-size: 1.6rem;
+  }
+  
+  .pedido .form-group h4 {
+    font-size: 0.9rem;
+  }
+  
+  .pedido .form-group input,
+  .pedido .form-group textarea {
+    padding: 12px 14px;
+    font-size: 0.9rem;
+  }
+  
+  .pedido-submit {
+    padding: 12px 20px;
+    font-size: 0.9rem;
+  }
+  
+  .regresar-btn {
+    padding: 10px 20px;
+    font-size: 0.8rem;
+  }
+}
+
+/* Estilos para página ¿Quiénes somos? */
+.quienes-somos-container {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 80px 32px;
+}
+
+.quienes-somos-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: center;
+}
+
+.quienes-somos-image {
+  position: relative;
+  overflow: hidden;
+  border-radius: 12px;
+}
+
+.quienes-somos-image img {
+  width: 100%;
+  height: 500px;
+  object-fit: cover;
+  filter: grayscale(100%) contrast(1.2);
+  transition: all 0.6s ease;
+}
+
+.quienes-somos-image:hover img {
+  filter: grayscale(80%) contrast(1.1);
+  transform: scale(1.02);
+}
+
+.quienes-somos-text {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  padding: 20px 0;
+}
+
+.quienes-somos-text h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: 3.5rem;
+  font-weight: 900;
+  line-height: 1.1;
+  letter-spacing: 2px;
+  color: var(--foreground);
+  margin: 0;
+  text-transform: uppercase;
+}
+
+.quienes-somos-text h4 {
+  font-size: 1.2rem;
+  font-weight: 300;
+  line-height: 1.8;
+  color: var(--foreground);
+  opacity: 0.9;
+  margin: 0;
+  max-width: 500px;
+}
+
+/* Responsive Design para ¿Quiénes somos? */
+@media (max-width: 1000px) {
+  .quienes-somos-content {
+    gap: 40px;
+  }
+  
+  .quienes-somos-text h1 {
+    font-size: 3rem;
+  }
+  
+  .quienes-somos-image img {
+    height: 400px;
+  }
+}
+
+@media (max-width: 900px) {
+  .quienes-somos-container {
+    padding: 60px 20px;
+  }
+  
+  .quienes-somos-content {
+    grid-template-columns: 1fr;
+    gap: 40px;
+    text-align: center;
+  }
+  
+  .quienes-somos-text h1 {
+    font-size: 2.8rem;
+  }
+  
+  .quienes-somos-text h4 {
+    font-size: 1.1rem;
+    max-width: 600px;
+    margin: 0 auto;
+  }
+  
+  .quienes-somos-image img {
+    height: 350px;
+  }
+}
+
+@media (max-width: 600px) {
+  .quienes-somos-container {
+    padding: 40px 16px;
+  }
+  
+  .quienes-somos-content {
+    gap: 30px;
+  }
+  
+  .quienes-somos-text h1 {
+    font-size: 2.2rem;
+  }
+  
+  .quienes-somos-text h4 {
+    font-size: 1rem;
+    line-height: 1.6;
+  }
+  
+  .quienes-somos-image img {
+    height: 300px;
+  }
 }
